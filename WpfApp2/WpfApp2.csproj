@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="IconsForProject\Cloud1.png" />
+    <None Remove="IconsForProject\Rain1.png" />
+    <None Remove="IconsForProject\Snow1.png" />
+    <None Remove="IconsForProject\Sun1.png" />
+    <None Remove="Pictures\BackCloud.jpg" />
+    <None Remove="Pictures\BackRain.jpg" />
+    <None Remove="Pictures\BackSnow.jpg" />
+    <None Remove="Pictures\BackSunny.jpg" />
+    <None Remove="Pictures\Rain.png" />
+    <None Remove="RainBackGround.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="IconsForProject\Cloud1.png" />
+    <Resource Include="IconsForProject\Rain1.png" />
+    <Resource Include="IconsForProject\Snow1.png" />
+    <Resource Include="IconsForProject\Sun1.png" />
+    <Resource Include="Pictures\BackCloud.jpg" />
+    <Resource Include="Pictures\BackRain.jpg" />
+    <Resource Include="Pictures\BackSnow.jpg" />
+    <Resource Include="Pictures\BackSunny.jpg" />
+  </ItemGroup>
+
+</Project>

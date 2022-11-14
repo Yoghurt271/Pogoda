@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" xmlns:System="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Canvas Width="800" Height="450">
+        <Image x:Name="Back" Width="800" Height="450"  Stretch="Fill" Source="/Pictures/BackCloud.jpg"/>
+
+        <Grid Height="450" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="271*"/>
+            </Grid.ColumnDefinitions>
+
+            <Canvas Width="800" Height="450" Background="Black" Opacity="0.4"></Canvas>
+            <Image x:Name="Icon" Source="/IconsForProject/Cloud1.png" Canvas.Left="188" Canvas.Top="62" Margin="99,46,57,299"/>
+            <TextBlock x:Name="dt" Margin="2,33,535,382" FontFamily="Calibri" FontSize="16" Foreground="White" Grid.ColumnSpan="2" />
+            <TextBlock x:Name="temperature"  Margin="2,63,134,296" FontSize="60" FontFamily="Calibri" Foreground="White"/>
+            <TextBlock x:Name="feels" Margin="3,144,528,271" FontFamily="Calibri" FontSize="16" Foreground="White" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="descrip" Margin="1,180,403,236" FontFamily="Calibri" FontSize="16" Foreground="White" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="wind" Margin="4,214,92,195" FontFamily="Calibri" FontSize="16" Foreground="White"/>
+            <TextBlock x:Name="pressure" HorizontalAlignment="Left" Margin="5,249,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Foreground="White" Width="210"/>
+            <TextBlock x:Name="moon" HorizontalAlignment="Left" Margin="4,284,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Foreground="White"/>
+
+            <Grid Margin="118,0,0,46" Grid.Column="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="124*"></ColumnDefinition>
+                    <ColumnDefinition Width="136*"></ColumnDefinition>
+                    <ColumnDefinition Width="96*"></ColumnDefinition>
+                    <ColumnDefinition Width="87*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29*"></RowDefinition>
+                    <RowDefinition Height="29*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                    <RowDefinition Height="56*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,0,1,51" Grid.RowSpan="2">День</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,0,8,51" Grid.RowSpan="2">Температура</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" FontFamily="Calibri" FontSize="20" Foreground="White" Grid.ColumnSpan="2" Margin="1,0,72,51" Grid.RowSpan="2">Осадки</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="3" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="2,0,0,51" Grid.RowSpan="2">Ветер</TextBlock>
+
+                <TextBlock x:Name="tomorow" Grid.Row="2" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,10,1,21" />
+                <TextBlock x:Name="tomorowDt" Grid.Row="2" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="0,33,1,2" Opacity="0.5" />
+                <TextBlock x:Name="tomorowTm" Grid.Row="2" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,15,71,10" Grid.Column="1"/>
+                <TextBlock x:Name="tomorowTm2" Grid.Row="2" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,11,7" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="precipitation" Grid.Row="2" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="windWeek" Grid.Row="2" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDayOne" Grid.Row="3" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,8,1,21" />
+                <TextBlock x:Name="weekDayOneDt" Grid.Row="3" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="-1,33,2,2" Opacity="0.5" />
+                <TextBlock x:Name="weekDayOneTm" Grid.Row="3" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,15,71,6" Grid.Column="1"/>
+                <TextBlock x:Name="weekDayOneTm2" Grid.Row="3" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="75,15,10,5" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDayOnePrecipitation" Grid.Row="3" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDayOneWindWeek" Grid.Row="3" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDayTwo" Grid.Row="4" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,11,1,20" />
+                <TextBlock x:Name="weekDayTwoDt" Grid.Row="4" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="1,32,130,3" Opacity="0.5" Grid.ColumnSpan="2" />
+                <TextBlock x:Name="weekDayTwoTm" Grid.Row="4" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,14,71,8" Grid.Column="1"/>
+                <TextBlock x:Name="weekDayTwoTm2" Grid.Row="4" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,10,6" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDayTwoPrecipitation" Grid.Row="4" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDayTwoWindWeek" Grid.Row="4" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDayTree" Grid.Row="5" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="-1,8,2,21" />
+                <TextBlock x:Name="weekDayTreeDt" Grid.Row="5" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="0,32,1,3" Opacity="0.5" />
+                <TextBlock x:Name="weekDayTreeTm" Grid.Row="5" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,15,71,5" Grid.Column="1"/>
+                <TextBlock x:Name="weekDayTreeTm2" Grid.Row="5" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,10,8" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDayTreePrecipitation" Grid.Row="5" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDayTreeWindWeek" Grid.Row="5" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDayFour" Grid.Row="6" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,12,1,18" />
+                <TextBlock x:Name="weekDayFourDt" Grid.Row="6" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="0,33,1,2" Opacity="0.5" />
+                <TextBlock x:Name="weekDayFourTm" Grid.Row="6" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="15,15,71,8" Grid.Column="1"/>
+                <TextBlock x:Name="weekDayFourTm2" Grid.Row="6" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,10,6" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDayFourPrecipitation" Grid.Row="6" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDayFourWindWeek" Grid.Row="6" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDayFive" Grid.Row="7" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,8,1,21" />
+                <TextBlock x:Name="weekDayFiveDt" Grid.Row="7" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="0,30,1,4" Opacity="0.5" />
+                <TextBlock x:Name="weekDayFiveTm" Grid.Row="7" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,15,71,7" Grid.Column="1"/>
+                <TextBlock x:Name="weekDayFiveTm2" Grid.Row="7" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,11,6" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDayFivePrecipitation" Grid.Row="7" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDayFiveWindWeek" Grid.Row="7" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock x:Name="weekDaySix" Grid.Row="8" Grid.Column="0" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,4,1,22" />
+                <TextBlock x:Name="weekDaySixDt" Grid.Row="8" Grid.Column="0" FontFamily="Calibri" FontSize="16" Foreground="#FFD8D8D8" Margin="0,28,1,2" Opacity="0.5" />
+                <TextBlock x:Name="weekDaySixTm" Grid.Row="8" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="17,15,71,4" Grid.Column="1"/>
+                <TextBlock x:Name="weekDaySixTm2" Grid.Row="8" FontFamily="Calibri" FontSize="20" Foreground="#FFD8D8D8" Margin="74,15,11,3" Grid.Column="1" Opacity="0.5"/>
+                <TextBlock x:Name="weekDaySixPrecipitation" Grid.Row="8" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="19,15,24,15" Grid.Column="2"/>
+                <TextBlock x:Name="weekDaySixWindWeek" Grid.Row="8" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="5,15,19,15" Grid.Column="3"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="20" Foreground="White" Margin="0,0,8,27" Grid.RowSpan="2" >Погода на неделю</TextBlock>
+            </Grid>
+            <ComboBox Name="city1" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="258" Visibility="Visible" Grid.ColumnSpan="2" Background="Black" BorderBrush="Black" Foreground="Black" SelectionChanged="city1_SelectionChanged">
+                <System:String>Погода во Владимире</System:String>
+                <System:String>Погода в Кольчугино</System:String>
+                <System:String>Погода в Сочи</System:String>
+                <System:String>Погода в Палане</System:String>
+                <System:String>Погода в Киншасе</System:String>
+                <System:String>Погода в Дубае</System:String>
+                <System:String>Погода в Амундсен-Скотте</System:String>
+            </ComboBox>
+        </Grid>
+    </Canvas>
+</Window>
