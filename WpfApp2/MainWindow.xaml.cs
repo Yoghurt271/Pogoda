@@ -26,7 +26,7 @@ namespace WpfApp2
     {
         public static string namecity;
         string selectedCity;
-        private ImageSource Pictures;
+
 
         public MainWindow()
         {
